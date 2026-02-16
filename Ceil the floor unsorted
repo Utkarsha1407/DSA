@@ -1,0 +1,27 @@
+// User code template
+
+class Solution {
+  public:
+    vector<int> getFloorAndCeil(int x, vector<int> &arr) {
+        // code here
+        int floorvalue=-1;
+        int ceilvalue=-1;
+        
+        for(int i=0; i<arr.size(); i++) {
+            
+            if(arr[i]<=x)
+            {
+                floorvalue = max(arr[i], floorvalue);    //-1 works fine here due to max
+            }
+           if(arr[i]>=x)
+            {
+                if(ceilvalue == -1)    //but -1 will always select as it is minimum
+                ceilvalue = arr[i];
+                else 
+                ceilvalue = min(arr[i], ceilvalue);
+            }
+        }
+        
+        return {floorvalue, ceilvalue};
+    }
+};
