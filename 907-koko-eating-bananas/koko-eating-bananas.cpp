@@ -8,7 +8,7 @@ public:
             end = max(end, piles[i]);  //loop max banana in the array tk hi chalega
         }
          start=sum/h;
-         if(!start)
+         if(start==0)
          start=1;
          while(start<=end)
         {
