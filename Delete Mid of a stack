@@ -1,0 +1,31 @@
+class Solution {
+  public:
+    // Function to delete middle element of a stack.
+    void solve(stack<int>& s, int curr,int mid) {
+        if(s.empty()) {
+            return;
+        }
+        if(curr == mid) {
+            s.pop();
+            return;
+        }
+        int x = s.top();
+        s.pop();
+        solve(s,curr+1,mid);
+        s.push(x);
+    }
+    void deleteMid(stack<int>& s) {  //
+        int n = s.size();
+        int mid = n/2;
+        solve(s,0,mid);
+    }
+
+};
+
+//Without &:
+//Photocopy pe kaam kar rahe ho.
+
+//With &:
+//Original document pe kaam kar rahe ho.
+
+//Delete karna hai to original pe hi karna padega.
