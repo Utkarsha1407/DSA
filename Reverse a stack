@@ -1,3 +1,27 @@
+
+Approach 1:
+class Solution {
+  public:
+    void reverseStack(stack<int> &st) {
+        queue<int>q;
+        
+        //// Step 1: Move stack -> queue
+        while(!st.empty()) {
+           q.push(st.top());
+           st.pop();
+        }
+        
+          // Step 2: Move queue -> stack
+        while(!q.empty()) {
+            st.push(q.front());
+            q.pop();
+        }
+        
+    }
+};
+
+Approach 2:
+
 class Solution {
   public:
 
