@@ -1,17 +1,22 @@
 class Solution {
 public:
     int minimumCost(vector<int>& nums) {
-        int firstMin = INT_MAX, secondMin = INT_MAX;
+        
+        int first = INT_MAX;
+        int second = INT_MAX;
+        int score = nums[0];
 
-        for (int i = 1; i < nums.size(); i++) {
-            if (nums[i] < firstMin) {
-                secondMin = firstMin;
-                firstMin = nums[i];
-            } else if (nums[i] < secondMin) {
-                secondMin = nums[i];
+        for(int i=1; i<nums.size(); i++) {
+            if(nums[i]<first) {
+                second = first;
+                first = nums[i];
             }
-        }
 
-        return nums[0] + firstMin + secondMin;
-    }
+            else if(nums[i]<second) {
+                second = nums[i];
+            }
+            }
+            return score + first + second;
+        }
+    
 };
