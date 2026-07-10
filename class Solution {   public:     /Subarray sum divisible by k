@@ -1,0 +1,31 @@
+class Solution {
+  public:
+    // Function to count the number of subarrays with a sum that is divisible by K
+    int subCount(vector<int>& arr, int k) {
+        
+       
+        unordered_map<long long int,long long int>mp;
+        long long int prefixsum=0;
+        long long int rem;
+         long long int total=0;
+        mp[0]=1;
+        
+        for(int i=0; i<arr.size(); i++) {
+            prefixsum+= arr[i];
+            rem = prefixsum % k;
+            
+            if(rem<0)
+            rem = rem + k;
+            
+            if(mp.count(rem)) {
+                total+= mp[rem];
+                mp[rem]++;
+            }
+            
+            else {
+                mp[rem]++;
+            }
+        }
+        return total;
+    }
+};
