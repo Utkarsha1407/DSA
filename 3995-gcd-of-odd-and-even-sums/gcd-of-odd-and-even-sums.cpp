@@ -7,7 +7,7 @@ public:
         sumodd = n*n;
         sumeven = n*(n+1);
 
-       return sumeven - sumodd;
+       return gcd(sumodd, sumeven);
         }
     
 };
