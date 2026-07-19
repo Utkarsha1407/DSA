@@ -1,7 +1,8 @@
 class MyQueue {
 public:
-stack<int>s1;
-stack<int>s2;
+
+    stack<int>s1;
+    stack<int>s2;
     MyQueue() {
         
     }
@@ -19,9 +20,9 @@ stack<int>s2;
     }
     
     int pop() {
-     int ans = s1.top();
-     s1.pop();
-     return ans;
+        int ans = s1.top();
+        s1.pop();
+        return ans;
     }
     
     int peek() {
