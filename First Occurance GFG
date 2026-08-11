@@ -1,0 +1,29 @@
+class Solution {
+  public:
+    int firstOccurence(string& txt, string& pat) {
+        // code here
+        for(int start=0; start<txt.size(); start++) {
+            
+            if(txt.substr(start, pat.size()) == pat) {
+                return start;
+            }
+            
+           
+        }
+        return -1;
+    }
+};
+
+
+
+
+Input: txt = "GeeksForGeeks", pat = "Fr"
+Output: -1
+Explanation: "Fr" is not present in the string "GeeksForGeeks" as substring.
+Input: txt = "GeeksForGeeks", pat = "For"
+Output: 5
+Explanation: "For" is present as substring in "GeeksForGeeks" from index 5 (0 based indexing).
+Input: txt = "GeeksForGeeks", pat = "gr"
+Output: -1
+Explanation: "gr" is not present in the string "GeeksForGeeks" as substring.
+Constraints:
