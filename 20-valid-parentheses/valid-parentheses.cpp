@@ -4,29 +4,32 @@ public:
         stack<char>st;
 
         for(int i=0; i<s.size(); i++) {
-            char ch = s[i];
-        
-        if(ch=='(' || ch=='[' || ch=='{' ) {
-            st.push(ch);
-        }
-        else {
+            
+
+            if(s[i] == '(' || s[i]== '[' || s[i]== '{') {
+                st.push(s[i]);
+            }  
+            else {
+
             if(st.empty()) {
-            return false;
+                return false;
+            }   
+
+            else if(st.top()== '(' && s[i] == ')' || 
+                    st.top() == '{'&& s[i] == '}' ||
+                     st.top() == '[' && s[i] == ']') {
+        
+                st.pop();
+             }
+
+            else {
+                return false;
+            }
+            }
+
         }
-        char top = st.top();
-        if((ch==')' && top=='(') || (ch==']' && top=='[') || (ch=='}' && top== '{')) {
-            st.pop();
-        }
-        else {
-            return false;
-        }
-    }
-        }
-        if(st.empty()) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        
+       return st.empty();
+       
     }
 };
