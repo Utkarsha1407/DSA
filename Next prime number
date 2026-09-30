@@ -1,0 +1,20 @@
+int nextPrime(int n) {
+    
+    n++;
+    
+    while(true) {
+    bool prime = true;
+    
+    for(int i=2; i<n; i++) {
+        if(n % i == 0) {
+         prime = false;
+         break;
+        }
+    }
+        
+        if(prime == true)
+        return n;
+        
+        n++;
+    }
+}
